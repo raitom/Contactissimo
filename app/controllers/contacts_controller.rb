@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
+    @adresse = Adresse.new
   end
 
   def new
@@ -17,9 +18,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  def create_adresse
-
-  end
 
   def update
   end
