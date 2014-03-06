@@ -14,11 +14,9 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if @contact.save
-      redirect_to contacts_path
-    else
-      render :error, layout: nil
-    end
+    flash[:error] = @contact.errors.full_messages.join('<br/>') unless @contact.save
+    redirect_to contacts_path
+
   end
 
   def edit
@@ -26,11 +24,8 @@ class ContactsController < ApplicationController
   end
 
   def update
-    if @contact.update(contact_params)
-      redirect_to contacts_path
-    else
-      render :error, layout: nil
-    end
+    flash[:error] = @contact.errors.full_messages.join('<br/>') unless @contact.update(contact_params)
+    redirect_to contacts_path
   end
 
   def destroy

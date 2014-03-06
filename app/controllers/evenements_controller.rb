@@ -14,11 +14,8 @@ class EvenementsController < ApplicationController
 
   def create
     @evenement = Evenement.new(evenement_params)
-    if @evenement.save
-      redirect_to evenements_path
-    else
-      render :error, layout: nil
-    end
+    flash[:error] = @evenement.errors.full_messages.join("<br/>") unless @evenement.save
+    redirect_to evenements_path
   end
 
   def edit
@@ -26,11 +23,8 @@ class EvenementsController < ApplicationController
   end
 
   def update
-    if @evenement.update(evenement_params)
-      redirect_to evenements_path
-    else
-      render :error, layout: nil
-    end
+    flash[:error] = @evenement.errors.full_messages.join("<br/>") unless @evenement.update(evenement_params)
+    redirect_to evenements_path
   end
 
   def destroy
