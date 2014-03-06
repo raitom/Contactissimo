@@ -22,9 +22,9 @@
           %legend
             %span.glyphicon.glyphicon-glass
             ="#{e.nom}"
-          %dl.dl-horizontal
-            %dt Theme
-            %dd= e.theme
+          %p
+            %strong Theme:
+            = e.theme
           - if e.adresse.nil?
             = render partial: 'contacts/add_adresse', locals: {contact_id: e.id, type: "Evenement"}
           -else
