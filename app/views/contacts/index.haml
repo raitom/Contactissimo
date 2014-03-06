@@ -15,6 +15,9 @@
         %li{class: c.id == @contacts.first.id ? 'active' : ''}
           %a{href: "#c-#{c.id}", data: {toggle: "tab"}}
             = "#{c.prenom} #{c.nom}"
+    %br
+      %h5{align:'center'}
+        = "#{@contacts.count} contacts"
   .col-md-8
     .tab-content.well
       - @contacts.each do |c|
@@ -22,6 +25,8 @@
           %legend
             %span.glyphicon.glyphicon-user
             ="#{c.prenom} #{c.nom}"
+            .pull-right
+              = link_to '', c, method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer ce contact ?' }, class: "glyphicon glyphicon-trash"
           - if c.adresse.nil?
             = render partial: 'contacts/add_adresse', locals: {contact_id: c.id, type: "Contact"}
           - else

@@ -26,6 +26,8 @@ class EvenementsController < ApplicationController
   end
 
   def destroy
+    Evenement.find(params[:id]).destroy
+    redirect_to(evenements_path)
   end
 
   private

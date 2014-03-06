@@ -15,6 +15,9 @@
         %li{class: e.id == @evenements.first.id ? 'active' : ''}
           %a{href: "#e-#{e.id}", data: {toggle: "tab"}}
             = "#{e.nom}"
+    %br
+      %h5{align:'center'}
+        = "#{@evenements.count} évenements"
   .col-md-8
     .tab-content.well
       - @evenements.each do |e|
@@ -22,6 +25,9 @@
           %legend
             %span.glyphicon.glyphicon-glass
             ="#{e.nom}"
+            .pull-right
+              = link_to '', e, method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer cet évenement ?' }, class: "glyphicon glyphicon-trash"
+
           %dl.dl-horizontal
             %dt Theme
             %dd= e.theme
