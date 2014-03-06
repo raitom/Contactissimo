@@ -1,6 +1,7 @@
 class EvenementsController < ApplicationController
   def index
     @evenements = Evenement.all
+    @adresse = Adresse.new
   end
 
   def new
@@ -29,6 +30,6 @@ class EvenementsController < ApplicationController
 
   private
     def evenement_params
-      params.require(:evenement).permit(:nom, :prenom)
+      params.require(:evenement).permit(:nom, :theme)
     end
 end
