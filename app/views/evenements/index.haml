@@ -27,10 +27,9 @@
             ="#{e.nom}"
             .pull-right
               = link_to '', e, method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer cet évenement ?' }, class: "glyphicon glyphicon-trash"
-
-          %dl.dl-horizontal
-            %dt Theme
-            %dd= e.theme
+          %p
+            %strong Theme:
+            = e.theme
           - if e.adresse.nil?
             = render partial: 'contacts/add_adresse', locals: {contact_id: e.id, type: "Evenement"}
           -else
