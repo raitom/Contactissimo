@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-generators', '~> 3.1.1'
 gem 'haml-rails'
+gem 'simple_form'
 
 
 group :development do
