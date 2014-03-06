@@ -23,7 +23,7 @@
             %span.glyphicon.glyphicon-user
             ="#{c.prenom} #{c.nom}"
           - if c.adresse.nil?
-            = render partial: 'contacts/add_adresse', locals: {contact_id: c.id}
+            = render partial: 'contacts/add_adresse', locals: {contact_id: c.id, type: "Contact"}
           - else
             %span.glyphicon.glyphicon-home
             = "#{c.adresse.adresse}, #{c.adresse.ville}, #{c.adresse.code_postal}"

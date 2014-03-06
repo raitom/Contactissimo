@@ -22,9 +22,9 @@
           %legend
             %span.glyphicon.glyphicon-user
             ="#{e.nom}"
-            - unless e.adresse.nil?
-              = link_to "+", new_adresse_path, class: 'btn btn-primary', remote: true
-          - unless e.adresse.nil?
+          - if e.adresse.nil?
+            = render partial: 'contacts/add_adresse', locals: {contact_id: e.id, type: "Evenement"}
+          -else
             %span.glyphicon.glyphicon-home
             = "#{e.adresse.adresse}, #{e.adresse.ville}, #{e.adresse.code_postal}"
 

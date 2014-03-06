@@ -5,5 +5,5 @@
   = a.input :ville
   = a.input :code_postal
   = a.input :adressable_id, as: :hidden, input_html: {value: "#{contact_id}"}
-  = a.input :adressable_type, as: :hidden, input_html: {value: "Contact"}
+  = a.input :adressable_type, as: :hidden, input_html: {value: "#{type}"}
   = a.button :submit, "Ajouter l'adresse"
