@@ -1,5 +1,16 @@
 .row
+  .col-md-12
+    %h1{align: 'center'} Liste des contacts
+
+.row
   .col-md-4
+    .row
+      .col-md-10
+        %input.form-control{type: 'text', placeholder: 'Rechercher ...'}
+      .col-md-2
+        %button.btn.btn-primary{id: 'add-contact', "data-target" => "#modal-add-contact", "data-toggle" => "modal"}
+          +
+    %br
     %ul.nav.nav-pills.nav-stacked
       - @contacts.each do |c|
         %li{class: c.id == @contacts.first.id ? 'active' : ''}
@@ -11,3 +22,5 @@
         .tab-pane{id: "c-#{c.id}", class: c.id == @contacts.first.id ? 'active' : ''}
           %legend
             = "#{c.prenom} #{c.nom}"
+
+= render 'contact/ajout_contact'
