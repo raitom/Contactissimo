@@ -1,0 +1,13 @@
+.row
+  .col-md-4
+    %ul.nav.nav-pills.nav-stacked
+      - @contacts.each do |c|
+        %li{class: c.id == @contacts.first.id ? 'active' : ''}
+          %a{href: "#c-#{c.id}", data: {toggle: "tab"}}
+            = "#{c.prenom} #{c.nom}"
+  .col-md-8
+    .tab-content.well
+      - @contacts.each do |c|
+        .tab-pane{id: "c-#{c.id}", class: c.id == @contacts.first.id ? 'active' : ''}
+          %legend
+            = "#{c.prenom} #{c.nom}"
