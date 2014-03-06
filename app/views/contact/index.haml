@@ -8,8 +8,7 @@
       .col-md-10
         %input.form-control{type: 'text', placeholder: 'Rechercher ...'}
       .col-md-2
-        %button.btn.btn-primary{id: 'add-contact', "data-target" => "#modal-add-contact", "data-toggle" => "modal"}
-          +
+        = link_to "+", new_contact_path, class: 'btn btn-primary', remote: true
     %br
     %ul.nav.nav-pills.nav-stacked
       - @contacts.each do |c|
@@ -23,4 +22,4 @@
           %legend
             = "#{c.prenom} #{c.nom}"
 
-= render 'contact/ajout_contact'
+.modal

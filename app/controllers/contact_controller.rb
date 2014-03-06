@@ -2,9 +2,10 @@ class ContactController < ApplicationController
   def index
     @contacts = Contact.all
   end
-  
+
   def new
     @contact = Contact.new
+    render :new, layout: nil
   end
 
   def create
