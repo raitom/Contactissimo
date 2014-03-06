@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      render :create, layout: nil
+      redirect_to root_path
     else
       render :error, layout: nil
     end
