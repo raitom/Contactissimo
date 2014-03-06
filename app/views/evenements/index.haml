@@ -20,7 +20,7 @@
       - @evenements.each do |e|
         .tab-pane{id: "e-#{e.id}", class: e.id == @evenements.first.id ? 'active' : ''}
           %legend
-            %span.glyphicon.glyphicon-user
+            %span.glyphicon.glyphicon-glass
             ="#{e.nom}"
             - unless e.adresse.nil?
               = link_to "+", new_adresse_path, class: 'btn btn-primary', remote: true
