@@ -3,11 +3,11 @@
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title Ajouter un contact
+        %h4#myModalLabel.modal-title Editer un contact
       .modal-body
         = simple_form_for @contact do |f|
           = f.input :prenom
           = f.input :nom
           .modal-footer
             %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Fermer
-            = f.button :submit, "Ajouter"
+            = f.button :submit, "Sauvegarder"
