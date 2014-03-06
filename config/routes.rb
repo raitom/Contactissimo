@@ -1,4 +1,4 @@
 Contactissimo::Application.routes.draw do
-  root 'contact#index'
-  resources :contact
+  root 'contacts#index'
+  resources :contacts
 end
