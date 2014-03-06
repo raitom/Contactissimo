@@ -9,7 +9,8 @@ class AdressesController < ApplicationController
     if @adresse.save
       @adresse.adressable_type == "Contact" ? redirect_to(root_path) : redirect_to(evenements_path)
     else
-      render :error, layout: nil
+      flash[:error]  = @adresse.errors.full_messages.join('<br/>')
+      redirect_to root_path
     end
   end
 
