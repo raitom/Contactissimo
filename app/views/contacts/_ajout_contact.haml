@@ -8,7 +8,6 @@
         = simple_form_for @contact, remote: true do |f|
           = f.input :prenom
           = f.input :nom
-          = f.button :submit
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Fermer
-        %button.btn.btn-primary{type: "button"} Ajouter
+          .modal-footer
+            %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Fermer
+            = f.button :submit, "Ajouter"
