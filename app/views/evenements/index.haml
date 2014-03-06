@@ -24,8 +24,12 @@
             ="#{e.nom}"
             - unless e.adresse.nil?
               = link_to "+", new_adresse_path, class: 'btn btn-primary', remote: true
+          %dl.dl-horizontal
+            %dt Theme
+            %dd= e.theme
           - unless e.adresse.nil?
             %span.glyphicon.glyphicon-home
             = "#{e.adresse.adresse}, #{e.adresse.ville}, #{e.adresse.code_postal}"
+
 
 .modal
