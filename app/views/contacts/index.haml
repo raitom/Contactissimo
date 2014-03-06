@@ -23,7 +23,6 @@
             %span.glyphicon.glyphicon-user
             ="#{c.prenom} #{c.nom}"
             - unless c.adresse.nil?
-              = link_to "+", new_adresse_path, class: 'btn btn-primary', remote: true
           - unless c.adresse.nil?
             %span.glyphicon.glyphicon-home
             = "#{c.adresse.adresse}, #{c.adresse.ville}, #{c.adresse.code_postal}"
