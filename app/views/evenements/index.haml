@@ -22,6 +22,8 @@
           %legend
             %span.glyphicon.glyphicon-glass
             ="#{e.nom}"
+          = link_to edit_evenement_path(e), remote: true do
+            %span.pull-right.glyphicon.glyphicon-edit
           %p
             %strong Theme:
             = e.theme

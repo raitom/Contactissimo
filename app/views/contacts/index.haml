@@ -22,6 +22,9 @@
           %legend
             %span.glyphicon.glyphicon-user
             ="#{c.prenom} #{c.nom}"
+          %p
+            = link_to edit_contact_path(c), remote: true do
+              %span.pull-right.glyphicon.glyphicon-edit
           - if c.adresse.nil?
             = render partial: 'contacts/add_adresse', locals: {contact_id: c.id, type: "Contact"}
           - else
