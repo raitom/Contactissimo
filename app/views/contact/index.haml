@@ -20,6 +20,9 @@
       - @contacts.each do |c|
         .tab-pane{id: "c-#{c.id}", class: c.id == @contacts.first.id ? 'active' : ''}
           %legend
-            = "#{c.prenom} #{c.nom}"
+            %span.glyphicon.glyphicon-user
+            ="#{c.prenom} #{c.nom}"
+          %span.glyphicon.glyphicon-home
+          = c.adresse
 
 .modal
