@@ -1,13 +1,13 @@
-#modal-add-contact.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+#modal-add-evenement.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title Ajouter un contact
+        %h4#myModalLabel.modal-title Ajouter un evenement
       .modal-body
-        = simple_form_for @contact do |f|
-          = f.input :prenom
+        = simple_form_for @evenement do |f|
           = f.input :nom
+          = f.input :theme
           .modal-footer
             %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Fermer
             = f.button :submit, "Ajouter"

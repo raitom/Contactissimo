@@ -1,0 +1,31 @@
+.row
+  .col-md-12
+    %h1{align: 'center'} Liste des evenements
+
+.row
+  .col-md-4
+    .row
+      .col-md-10
+        %input.form-control{type: 'text', placeholder: 'Rechercher ...'}
+      .col-md-2
+        = link_to "+", new_evenement_path, class: 'btn btn-primary', remote: true
+    %br
+    %ul.nav.nav-pills.nav-stacked
+      - @evenements.each do |e|
+        %li{class: e.id == @evenements.first.id ? 'active' : ''}
+          %a{href: "#e-#{e.id}", data: {toggle: "tab"}}
+            = "#{e.nom}"
+  .col-md-8
+    .tab-content.well
+      - @evenements.each do |e|
+        .tab-pane{id: "e-#{e.id}", class: e.id == @evenements.first.id ? 'active' : ''}
+          %legend
+            %span.glyphicon.glyphicon-user
+            ="#{e.nom}"
+            - unless e.adresse.nil?
+              = link_to "+", new_adresse_path, class: 'btn btn-primary', remote: true
+          - unless e.adresse.nil?
+            %span.glyphicon.glyphicon-home
+            = "#{e.adresse.adresse}, #{e.adresse.ville}, #{e.adresse.code_postal}"
+
+.modal
