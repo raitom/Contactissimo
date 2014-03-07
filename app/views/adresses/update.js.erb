@@ -1,0 +1,3 @@
+$("#adresse-<%= @adresse.id %> .adresse-text").text("<%= @adresse.adresse %>" + ", " + "<%= @adresse.ville %>" + ", " + "<%= @adresse.code_postal %>");
+$('.adresse-form').remove();
+$("#adresse-<%= @adresse.id %>").show();

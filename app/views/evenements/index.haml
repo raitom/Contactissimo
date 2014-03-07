@@ -33,8 +33,11 @@
           - if e.adresse.nil?
             = render partial: 'contacts/add_adresse', locals: {contact_id: e.id, type: "Evenement"}
           -else
-            %span.glyphicon.glyphicon-home
-            = "#{e.adresse.adresse}, #{e.adresse.ville}, #{e.adresse.code_postal}"
+            .adresse{id: "adresse-#{e.adresse.id}"}
+              %span.glyphicon.glyphicon-home
+              .adresse-text{style: "display: inline;"}
+                = "#{e.adresse.adresse}, #{e.adresse.ville}, #{e.adresse.code_postal}"
+              = link_to "editer", edit_adress_path(e.adresse), remote: true
 
 
 .modal

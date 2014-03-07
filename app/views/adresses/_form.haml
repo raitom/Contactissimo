@@ -1,0 +1,12 @@
+= simple_form_for adresse, html: {class: 'adresse-form'}, remote: true do |a|
+  = a.input :adresse
+  = a.input :ville
+  = a.input :code_postal
+  = a.button :submit, "Sauvegarder"
+  = link_to "Annuler", "#", class: 'btn btn-default', id: "cancel"
+:javascript
+  $('#cancel').on('click', function(e){
+    e.preventDefault();
+    $('.adresse-form').remove();
+    $('#adresse-'+'#{adresse.id}').show();
+  });
